@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jessie Basagre - Aspiring Web Developer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/my-portfolio/styles/projects.css">
+    <link rel="stylesheet" href="/my-portfolio/styles/core.css">
+
+    
+</head>
+<body>
+     <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo"><img src="images/logo.png" alt="logo" width="50px" height="50px"></div>
+            <ul class="nav-menu">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="home.html#about" class="nav-link">About</a></li>
+                <li><a href="home.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="Education.html" class="nav-link">Education</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="home.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="home.html#about" class="nav-link">About</a>
+                <a href="home.html#skills" class="nav-link">Skills</a>
+                <a href="Education.html" class="nav-link">Education</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="home.html#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Enhanced Projects Section -->
+<section id="projects" class="section projects-hero-section">
+    <!-- Background -->
+    <div class="projects-bg"></div>
+    
+    <!-- Floating Code Elements -->
+    <div class="code-particles">
+        <div class="code-particle"><span>&lt;/&gt;</span></div>
+        <div class="code-particle"><span>{}</span></div>
+        <div class="code-particle"><span>const</span></div>
+        <div class="code-particle"><span>HTML</span></div>
+
+    </div>
+
+    <div class="container">
+        <!-- Section Header -->
+        <div class="section-header animate-on-scroll">
+            <div class="section-icon">
+                <i class="fas fa-code"></i>
+            </div>
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">
+                Handcrafted web applications showcasing modern technologies and real-world problem solving
+            </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="projects-filter">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="frontend">Frontend</button>
+            <button class="filter-btn" data-filter="backend">Backend</button>
+            <button class="filter-btn" data-filter="fullstack">Fullstack</button>
+            <button class="filter-btn" data-filter="game">Game</button>
+        </div>
+
+<!-- Projects Grid - FIXED Click Handlers -->
+<div class="projects-grid">
+    <!-- Project 1 -->
+    <div class="project-card animate-on-scroll" data-project="0">
+        <div class="project-image">
+            <img src="/my-portfolio/images/simpleCrudApp1.png" alt="Simple CRUD" />
+        </div>
+        <div class="project-content">
+            <h3 class="project-title" data-project="0">Simple CRUD App</h3>
+            <p class="project-description">A Simple Product management with real-time CRUD.</p>
+            <div class="project-tech">
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">HTML/CSS</span>
+            </div>
+            <div class="project-links">
+                <a href="https://jessiebasagre1.github.io/simple-crud-app/" class="btn btn-primary" target="_blank">Live Demo</a>
+                <a href="https://github.com/jessiebasagre1/simple-crud-app" class="btn btn-secondary" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card animate-on-scroll" data-project="1">
+        <div class="project-image">
+            <img src="images/cala-cesta1.png" alt="Task Manager" />
+        </div>
+        <div class="project-content">
+            <h3 class="project-title" data-project="1">Cala-Cesta</h3>
+            <p class="project-description">A convenient platform for ordering and delivering local pasalubong products.</p>
+            <div class="project-tech">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">Javascript</span>
+                <span class="tech-tag">Node JS</span>
+                <span class="tech-tag">MongoDB</span>
+            </div>
+            <div class="project-links">
+                <a href="#" class="btn btn-primary disabled">Coming Soon</a>
+                <a href="#" class="btn btn-secondary disabled">Code Soon</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-card animate-on-scroll" data-project="2">
+        <div class="project-image">
+            <img src="images/dashboard1.png" alt="Dashboard" />
+        </div>
+        <div class="project-content">
+            <h3 class="project-title" data-project="2">Data Dashboard</h3>
+            <p class="project-description">Interactive analytics with real-time charts.</p>
+            <div class="project-tech">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">Javascript</span>
+            </div>
+            <div class="project-links">
+                <a href="#" class="btn btn-primary disabled">Coming Soon</a>
+                <a href="#" class="btn btn-secondary disabled">Code Soon</a>
+            </div>
+        </div>
+    </div>
+    <!--Project 4-->
+    <div class="project-card animate-on-scroll" data-project="3">
+        <div class="project-image">
+            <img src="/my-portfolio/images/typephoon-1.png" alt="Dashboard" />
+        </div>
+        <div class="project-content">
+            <h3 class="project-title" data-project="3">TypePhoon</h3>
+            <p class="project-description">A typing game for typhoon awareness and safety.</p>
+            <div class="project-tech">
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">Unity Game Engine</span>
+                <span class="tech-tag">Gemini</span>
+            </div>
+            <div class="project-links">
+                <a href="#" class="btn btn-primary disabled">Coming Soon</a>
+                <a href="#" class="btn btn-secondary disabled">Code Soon</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+
+        <!-- Stats -->
+        <div class="projects-stats animate-on-scroll">
+            <div class="stat-item">
+                <div class="stat-number" data-target="3+">4</div>
+                <div class="stat-label">Total Projects</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="3+">2</div>
+                <div class="stat-label">Live Projects</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="500+">1000+</div>
+                <div class="stat-label">Lines of Code</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Modals -->
+    <div class="project-modals">
+        <!-- Modal 1: Simple CRUD -->
+        <div class="project-modal" id="modal1">
+            <div class="modal-overlay" onclick="closeModal(1)">
+                <div class="modal-content" onclick="event.stopPropagation()">
+                    <button class="modal-close" onclick="closeModal(1)">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="modal-gallery">
+                        <img src="./images/simpleCrudApp1.png" alt="CRUD 1" class="active">
+                        <img src="./images/simpleCrudApp2.png" alt="CRUD 2">
+                        <img src="./images/simpleCrudApp3.png" alt="CRUD 3">
+                        <button class="gallery-nav prev" onclick="prevSlide(1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="gallery-nav next" onclick="nextSlide(1)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="gallery-dots">
+                            <span class="gallery-dot active" onclick="goToSlide(1,0)"></span>
+                            <span class="gallery-dot" onclick="goToSlide(1,1)"></span>
+                            <span class="gallery-dot" onclick="goToSlide(1,2)"></span>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <h2>Simple CRUD App</h2>
+                        <p>A fully functional CRUD application for product management with MongoDB backend, image upload, real-time updates, and responsive design.</p>
+                        <div class="modal-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">CSS3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+</section>
+<footer class="footer">
+        <p>&copy; 2026 Jessie Basagre. Made with ❤️ using HTML, CSS & JavaScript.</p>
+</footer>
+
+    <script src="/my-portfolio/scripts/core.js"></script>
+    <script src="/my-portfolio/scripts/projects.js"></script>
+
+</body>
+</html>

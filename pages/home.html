@@ -6,30 +6,37 @@
     <title>Jessie Basagre - Aspiring Web Developer</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="basagre.css">
+    <link rel="stylesheet" href="/my-portfolio/styles/home.css">
+    <link rel="stylesheet" href="/my-portfolio/styles/core.css">
+    
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="logo">JB</div>
+            <div class="logo"><img src="images/logo.png" alt="logo" width="50px" height="50px"></div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="Education.html" class="nav-link">Education</a></li>
+                <li><a href="Projects.html" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
+            <div>
             <button class="theme-toggle" id="themeToggle">
                 <i class="fas fa-moon"></i>
             </button>
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
             </button>
+            </div>
             <div class="mobile-menu" id="mobileMenu">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
-                <a href="#projects" class="nav-link">Projects</a>
+                <a href="Education.html" class="nav-link">Education</a>
+                <a href="Projects.html" class="nav-link">Projects</a>
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
@@ -37,21 +44,52 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="profile">
-                <img src="" alt="profile picture" id="profile-pic">
-            </div>
-            
-            <h1>Jessie Basagre</h1>
-            <div class="role"></div>
-            <p>Passionate about creating beautiful, functional websites and bringing ideas to life through modern web technologies.</p>
-            <div class="cta-buttons">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+<section id="home" class="hero">
+    <div class="hero-container">
+        <!-- Left Side - Profile Image -->
+        <div class="hero-profile">
+            <div class="profile-image">
+                <img src="images/profile.jpg" alt="Jessie Basagre - Web Developer" id="profile-pic">
+                <div class="profile-overlay">
+                </div>
             </div>
         </div>
-    </section>
+
+        <!-- Right Side - Content -->
+        <div class="hero-content">
+            <div class="typewriter-container">
+                <h1 class="hero-title">Hi, I'm <span class="gradient-text">Jessie Basagre</span></h1>
+                <div class="role" id="dynamic-role">
+                    <span class="role-text"></span>
+                    <span class="cursor">|</span>
+                </div>
+            </div>
+            
+            <p class="hero-description">
+                Passionate <strong>Web Developer</strong> & <strong>Game Developer</strong> 
+                crafting pixel-perfect experiences with modern technologies. 
+                I turn ideas into interactive realities.
+            </p>
+            
+            <div class="cta-buttons">
+                <a href="Projects.html" class="btn btn-primary">
+                    <i class="fas fa-rocket"></i> View My Work
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <i class="fas fa-arrow-down"></i> Get In Touch
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Floating Elements -->
+    <div class="floating-elements">
+        <div class="float-item html"><i class="fab fa-html5"></i></div>
+        <div class="float-item css"><i class="fab fa-css3-alt"></i></div>
+        <div class="float-item js"><i class="fab fa-js-square"></i></div>
+        <div class="float-item node"><i class="fab fa-node-js"></i></div>
+    </div>
+</section>
 
     <!-- About Section -->
     <section id="about" class="section animate-on-scroll">
@@ -88,10 +126,13 @@
         </div>
     </section>
 
+<!-- Education Section -->
+
+
     <!-- Skills Section -->
     <section id="skills" class="section" style="background: var(--bg-secondary);">
         <h2 class="section-title">Skills & Technologies</h2>
-        <h2>Technical Skills</h4>
+        <h3>Technical Skills</h3>
         <div class="skills-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
             <div class="skill-item animate-on-scroll">
                 <i class="fab fa-html5"></i>
@@ -108,11 +149,6 @@
                 
             </div>
             <div class="skill-item animate-on-scroll">
-                <i class="fab fa-react"></i>
-                <h4>React</h4>
-               
-            </div>
-            <div class="skill-item animate-on-scroll">
                 <i class="fab fa-node-js"></i>
                 <h4>Node.js</h4>
                 
@@ -125,10 +161,13 @@
             <div class="skill-item animate-on-scroll">
                 <i class="fab fa-unity"></i>
                 <h4>Unity Game Engine</h4>
-                
             </div>    
+            <div class="skill-item animate-on-scroll">
+                <i class="fas fa-code"></i>
+                <h4>C#</h4>
+            </div>  
         </div>
-        <h2>Non-Technical Skills</h4>
+        <h3>Non-Technical Skills</h3>
             <div class="skills-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
             <div class="skill-item animate-on-scroll">
                 <i class="fas fa-brain"></i>
@@ -162,71 +201,7 @@
     </section>
     
         <!-- Projects Section -->
-    <section id="projects" class="section animate-on-scroll">
-        <!--=======================================================-->
-       
-        <!--=======================================================-->
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card animate-on-scroll">
-                <div class="project-image">
-                    <i class="fas fa-laptop-code"></i>
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title" onclick="openModal(0)">Simple CRUD App</h3>
-                    <p class="project-description">A simple CRUD application for product management with add, edit, and delete buttons for managing products</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML5</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">MongoDB</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://jessiebasagre1.github.io/simple-crud-app/" class="btn btn-primary" style="font-size: 0.9rem; padding: 8px 20px;">Live Demo</a>
-                        <a href="https://github.com/jessiebasagre1/simple-crud-app" class="btn btn-secondary" style="font-size: 0.9rem; padding: 8px 20px; background: transparent; border-color: var(--text-secondary); color: var(--text-secondary);">GitHub</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card animate-on-scroll">
-                <div class="project-image">
-                    <i class="fas fa-tasks"></i>
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title" onclick="openModal(1)">Task Management App</h3>
-                    <p class="project-description">A modern task management application with drag & drop functionality, real-time updates, and team collaboration features.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Vue.js</span>
-                        <span class="tech-tag">Firebase</span>
-                        <span class="tech-tag">Tailwind CSS</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="btn btn-primary" style="font-size: 0.9rem; padding: 8px 20px;">Live Demo</a>
-                        <a href="#" class="btn btn-secondary" style="font-size: 0.9rem; padding: 8px 20px; background: transparent; border-color: var(--text-secondary); color: var(--text-secondary);">GitHub</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card animate-on-scroll">
-                <div class="project-image">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title" onclick="openModal(2)">Data Dashboard</h3>
-                    <p class="project-description">Interactive dashboard for data visualization with charts, graphs, and real-time analytics using modern charting libraries.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Chart.js</span>
-                        <span class="tech-tag">D3.js</span>
-                        <span class="tech-tag">Express</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="btn btn-primary" style="font-size: 0.9rem; padding: 8px 20px;">Live Demo</a>
-                        <a href="#" class="btn btn-secondary" style="font-size: 0.9rem; padding: 8px 20px; background: transparent; border-color: var(--text-secondary); color: var(--text-secondary);">GitHub</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- Contact Section -->
     <section id="contact" class="section animate-on-scroll">
@@ -247,13 +222,20 @@
                     <span>Camarines Sur, Philippines</span>
                 </div>
                 <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
+                    <a href="https://github.com/jessiebasagre1" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/jessie-basagre-2145b0406/" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://web.facebook.com/jessie.basagre.9" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/jessiebasagre/" class="social-link"><i class="fab fa-instagram"></i></a>
                 </div>
                 <div style="margin-top: 2rem;">
-                    <a href="#" class="btn btn-primary" style="margin-right: 1rem;">Download Resume</a>
+                    <a 
+                            href="/images/background.jpg" 
+                            download="background.jpg" 
+                            class="btn btn-primary"
+                            style=" margin-right: 1rem"
+                        >
+                            Download Resume
+                        </a>
                 </div>
             </div>
             <form class="contact-form" id="contactForm">
@@ -278,13 +260,15 @@
     <footer class="footer">
         <p>&copy; 2026 Jessie Basagre. Made with ❤️ using HTML, CSS & JavaScript.</p>
     </footer>
-
+    <script src="/my-portfolio/scripts/home.js"></script>
+    <script src="/my-portfolio/scripts/core.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
-        
+        (function(){
+            emailjs.init("AeqdmqpIko8784nma");
+        })();
     </script>
-
     <style>
-        /* Additional styles for skill bars */
         .skill-bar {
             width: 100%;
             height: 8px;
