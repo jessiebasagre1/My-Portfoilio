@@ -40,18 +40,23 @@ body {
 .navbar {
     position: fixed;
     top: 0;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
     padding: 1rem 0;
     transition: all 0.3s ease;
     border-bottom: 1px solid var(--border-color);
+    border-radius: 50px;
+    margin-top: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.80);
+    
+    
 }
 
-[data-theme="dark"] .navbar {
-    background: rgba(15, 23, 42, 0.95);
-}
+[data-theme="dark"] .navbar { background: rgba(15, 23, 42, 0.95);box-shadow: 1px 1px 2px  var(--primary-color); }
 
 .nav-container {
     max-width: 1200px;
@@ -82,9 +87,7 @@ body {
     position: relative;
 }
 
-.nav-link:hover {
-    color: var(--primary-color);
-}
+.nav-link:hover { color: var(--primary-color); }
 
 .nav-link::after {
     content: '';
@@ -97,9 +100,7 @@ body {
     transition: width 0.3s ease;
 }
 
-.nav-link:hover::after {
-    width: 100%;
-}
+.nav-link:hover::after { width: 100%; }
 
 .theme-toggle, .mobile-menu-btn {
     background: none;
@@ -108,8 +109,8 @@ body {
     cursor: pointer;
     color: var(--text-primary);
     padding: 0.5rem;
-    
 }
+
 
 /* Mobile Menu */
 .mobile-menu {
@@ -838,12 +839,122 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .nav-menu {
-        display: none;
+    .navbar {
+        width: 95%;
+        height: fit-content;
+        padding: 0.8rem 0;
+        margin-top: 8px;
+        border-radius: 25px;
+  
     }
-
-    .mobile-menu-btn {
+    
+    .nav-container {
+        padding: 0 1rem;
+        height: 20px;
+        align-items: center;
+    }
+    .top-buttons{
+        display: flex;
+    }
+    
+    /* Hide desktop menu */
+    .nav-menu {
+        display: none !important;
+    }
+    
+    /* Show mobile buttons */
+    .theme-toggle, .mobile-menu-btn {
+        display: flex !important;
+        margin-left: 0.5rem;
+    }
+    
+    /* Mobile Menu Styles */
+    .mobile-menu {
+        position: fixed;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        border-radius: 0 0 25px 25px;
+        flex-direction: column;
+        padding: 1rem 0;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        transform: translateY(-20px);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        z-index: 999;
+        gap: 0;
+    }
+    
+    /* Dark mobile menu */
+    [data-theme="dark"] .mobile-menu {
+        background: rgba(15, 23, 42, 0.98);
+        box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+    }
+    
+    /* Active mobile menu */
+    .mobile-menu.active {
+        display: flex !important;
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* Mobile menu links */
+    .mobile-menu .nav-link {
         display: block;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+    }
+    
+    [data-theme="dark"] .mobile-menu .nav-link {
+        border-bottom-color: rgba(255,255,255,0.1);
+    }
+    
+    .mobile-menu .nav-link:last-child {
+        border-bottom: none;
+    }
+    
+    .mobile-menu .nav-link:hover {
+        background: var(--primary-color);
+        color: white !important;
+        padding-left: 3rem;
+        transform: translateX(10px);
+    }
+    
+    /* Mobile logo */
+    .logo img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    /* Mobile buttons */
+    .theme-toggle, .mobile-menu-btn {
+        font-size: 1.3rem;
+        padding: 0.6rem;
+        margin-left: 0.3rem;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+    }
+    
+    .theme-toggle:hover, .mobile-menu-btn:hover {
+        background: rgba(99, 102, 241, 0.1);
+        transform: scale(1.1);
+    }
+    
+    [data-theme="dark"] .theme-toggle:hover, 
+    [data-theme="dark"] .mobile-menu-btn:hover {
+        background: rgba(99, 102, 241, 0.2);
+    }
+    
+    /* Mobile menu button icon animation */
+    .mobile-menu-btn.active i {
+        transform: rotate(90deg);
     }
 
     .hero {

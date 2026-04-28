@@ -5,13 +5,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const projectsData = [
         {
             title: "Simple CRUD App",
-            description: "Fully functional MERN stack product management system with image upload, real-time CRUD operations, search, and responsive design.",
+            description: "A simple product management app for adding, updating, and deleting products. This app contains buttons for managing products which makes easy for the user to manage the inventory. It is Made with HTML,CSS, Javascript, Node.js and MongoDB. The data is connected on MongoDB which provides real-time data for managing products. Axios was used to communicate with APIs and it simplifies fetching data from servers and sending data to backend services.",
             images: [
                 "images/simpleCrudApp1.png",
                 "images/simpleCrudApp2.png", 
                 "images/simpleCrudApp3.png"
             ],
-            tech: ["HTML5", "Node.js", "MongoDB", "CSS3"],
+            tech: ["HTML5", "CSS3", "Javascript", "Node.js","MongoDB"],
             category: 'backend'
         },
         {
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         {
             title: "Data Dashboard",
-            description: "Interactive analytics dashboard with responsive charts, real-time data, filtering, export, and customizable widgets.",
+            description: "This is a frontend admin dashboard for an online souvenir shop. It is designed to help store managers easily view sales, manage orders, and track business activity. The project is built using HTML, CSS, and JavaScript, focusing on a clean and user-friendly interface. It includes an overview of key data like total sales, active orders, and recent transactions, along with a table for managing orders. This project highlights my skills in creating responsive layouts and designing simple, modern user interfaces for web applications.",
             images: [
                 "images/dashboard1.png",
                 "images/dashboard2.png",
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         {
             title: "TypePhoon",
-            description: "An educational typing game that helps players improve their typing skills while learning about typhoon awareness and safety.",
+            description: "Typephoon is an interactive typing game designed to improve users’ typing speed and accuracy while promoting awareness about typhoons and disaster preparedness. The game challenges players to quickly type words related to weather conditions, emergency responses, and safety measures before time runs out. With its engaging gameplay and educational content, Typephoon combines skill development with real-world relevance, helping users stay informed while enhancing their typing abilities. The project demonstrates the integration of user-friendly design, dynamic game logic, and purposeful learning through technology.",
             images: [
                 "images/typephoon-1.png",
                 "images/typephoon-2.png",
@@ -46,6 +46,17 @@ document.addEventListener('DOMContentLoaded', function() {
             ],
             tech: ["C#", "Unity Game Engine", "Gemini"],
             category: 'game'
+        },
+        {
+            title: "Simple Calculator App",
+            description: "Simple Calculator App made with HTML, CSS, and Javascript.",
+            images: [
+                "images/calc1.png",
+                "images/calc2.png",
+                "images/calc3.png"
+            ],
+            tech: ["HTML5", "CSS3", "Javascript"],
+            category: 'frontend'
         }
     ];
 

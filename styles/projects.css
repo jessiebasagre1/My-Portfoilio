@@ -272,7 +272,6 @@
     flex-wrap: wrap;
 }
 
-/* Button Styles - Perfect for Light/Dark Mode */
 .btn {
     display: inline-flex;
     align-items: center;

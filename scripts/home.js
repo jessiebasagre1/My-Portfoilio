@@ -92,3 +92,35 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
             btn.disabled = false;
         });
 });
+//===========================This is for progress skill bar==========================
+// Animate skill progress bars
+function animateSkillBars() {
+    const progressBars = document.querySelectorAll('.skill-progress');
+    
+    progressBars.forEach(bar => {
+        const width = bar.getAttribute('data-width');
+        if (bar.getAttribute('data-animated') !== 'true') {
+            setTimeout(() => {
+                bar.style.width = width;
+                bar.setAttribute('data-animated', 'true');
+            }, 300);
+        }
+    });
+}
+
+// Trigger on scroll
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateSkillBars();
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const skillsSection = document.querySelector('#skills');
+    if (skillsSection) {
+        observer.observe(skillsSection);
+    }
+});
