@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
             title: "Simple CRUD App",
             description: "A simple product management app for adding, updating, and deleting products. This app contains buttons for managing products which makes easy for the user to manage the inventory. It is Made with HTML,CSS, Javascript, Node.js and MongoDB. The data is connected on MongoDB which provides real-time data for managing products. Axios was used to communicate with APIs and it simplifies fetching data from servers and sending data to backend services.",
             images: [
-                "images/simpleCrudApp1.png",
-                "images/simpleCrudApp2.png", 
-                "images/simpleCrudApp3.png"
+                "/my-portfolio/pages/images/simpleCrudApp1.png",
+                "/my-portfolio/pages/images/simpleCrudApp2.png", 
+                "/my-portfolio/pages/images/simpleCrudApp3.png"
             ],
             tech: ["HTML5", "CSS3", "Javascript", "Node.js","MongoDB"],
             category: 'backend'
@@ -18,9 +18,9 @@ document.addEventListener('DOMContentLoaded', function() {
             title: "Cala-Cesta",
             description: "CALA-CESTA is a web-based food ordering and delivery system for souvenir shops in Calabanga, Camarines Sur. It helps customers easily browse and order pasalubong products online. It also helps shop owners manage their products, track sales, and monitor inventory. The system updates everything automatically, making business operations faster, easier, and more organized while promoting local products.",
             images: [
-                "images/cala-cesta1.png",
-                "images/cala-cesta1.png",
-                "images/cala-cesta1.png"
+                "/my-portfolio/pages/images/cala-cesta1.png",
+                "/my-portfolio/pages/images/cala-cesta2.png",
+                "/my-portfolio/pages/images/cala-cesta3.png"
             ],
             tech: ["HTML5", "CSS3", "Javascript","Node.js", "MongoDB"],
             category: 'fullstack'
@@ -29,9 +29,9 @@ document.addEventListener('DOMContentLoaded', function() {
             title: "Data Dashboard",
             description: "This is a frontend admin dashboard for an online souvenir shop. It is designed to help store managers easily view sales, manage orders, and track business activity. The project is built using HTML, CSS, and JavaScript, focusing on a clean and user-friendly interface. It includes an overview of key data like total sales, active orders, and recent transactions, along with a table for managing orders. This project highlights my skills in creating responsive layouts and designing simple, modern user interfaces for web applications.",
             images: [
-                "images/dashboard1.png",
-                "images/dashboard2.png",
-                "images/dashboard3.png"
+                "/my-portfolio/pages/images/dashboard1.png",
+                "/my-portfolio/pages/images/dashboard2.png",
+                "/my-portfolio/pages/images/dashboard3.png"
             ],
             tech: ["HTML5", "CSS3", "Javascript"],
             category: 'frontend'
@@ -40,9 +40,9 @@ document.addEventListener('DOMContentLoaded', function() {
             title: "TypePhoon",
             description: "Typephoon is an interactive typing game designed to improve users’ typing speed and accuracy while promoting awareness about typhoons and disaster preparedness. The game challenges players to quickly type words related to weather conditions, emergency responses, and safety measures before time runs out. With its engaging gameplay and educational content, Typephoon combines skill development with real-world relevance, helping users stay informed while enhancing their typing abilities. The project demonstrates the integration of user-friendly design, dynamic game logic, and purposeful learning through technology.",
             images: [
-                "images/typephoon-1.png",
-                "images/typephoon-2.png",
-                "images/typephoon-3.png"
+                "/my-portfolio/pages/images/typephoon-1.png",
+                "/my-portfolio/pages/images/typephoon-2.png",
+                "/my-portfolio/pages/images/typephoon-3.png"
             ],
             tech: ["C#", "Unity Game Engine", "Gemini"],
             category: 'game'
@@ -51,9 +51,9 @@ document.addEventListener('DOMContentLoaded', function() {
             title: "Simple Calculator App",
             description: "Simple Calculator App made with HTML, CSS, and Javascript.",
             images: [
-                "images/calc1.png",
-                "images/calc2.png",
-                "images/calc3.png"
+                "/my-portfolio/pages/images/calc1.png",
+                "/my-portfolio/pages/images/calc2.png",
+                "/my-portfolio/pages/images/calc3.png"
             ],
             tech: ["HTML5", "CSS3", "Javascript"],
             category: 'frontend'
