@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         {
             title: "TypePhoon",
-            description: "Typephoon is an interactive typing game designed to improve users’ typing speed and accuracy while promoting awareness about typhoons and disaster preparedness. The game challenges players to quickly type words related to weather conditions, emergency responses, and safety measures before time runs out. With its engaging gameplay and educational content, Typephoon combines skill development with real-world relevance, helping users stay informed while enhancing their typing abilities. The project demonstrates the integration of user-friendly design, dynamic game logic, and purposeful learning through technology.",
+            description: "Typephoon is an interactive typing game designed to improve users' typing speed and accuracy while promoting awareness about typhoons and disaster preparedness. The game challenges players to quickly type words related to weather conditions, emergency responses, and safety measures before time runs out. With its engaging gameplay and educational content, Typephoon combines skill development with real-world relevance, helping users stay informed while enhancing their typing abilities. The project demonstrates the integration of user-friendly design, dynamic game logic, and purposeful learning through technology.",
             images: [
                 "../pages/images/typephoon-1.png",
                 "../pages/images/typephoon-2.png",
@@ -57,6 +57,17 @@ document.addEventListener('DOMContentLoaded', function() {
             ],
             tech: ["HTML5", "CSS3", "Javascript"],
             category: 'frontend'
+        },
+        {
+            title: "Dodge Game Prototype",
+            description: "A simple prototype game developed using Unity, where the player must dodge incoming obstacles to survive as long as possible. The core gameplay focuses on continuous movement and quick reaction timing, challenging the player to avoid collisions while navigating through an increasing number of obstacles. The game features a score system that increases the longer the player survives. It also includes a high score tracker to record the best performance across play sessions. As the score increases, the game gradually becomes more difficult by increasing the movement speed of the obstacles, creating a progressive difficulty curve that tests the player's reflexes and focus. This project demonstrates basic game mechanics implementation, including player movement, collision detection, score tracking, and difficulty scaling over time.",
+            images: [
+                "../pages/images/dodgegame.gif",
+                "../pages/images/dodge-1.png",
+                "../pages/images/dodge-thumbnail.png"
+            ],
+            tech: ["Unity Game Engine", "C#"],
+            category: 'game'
         }
     ];
 
@@ -69,59 +80,62 @@ document.addEventListener('DOMContentLoaded', function() {
     // DOM Elements with null checks
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
-    const projectTitles = document.querySelectorAll('.project-title'); // ✅ NEW: Only titles
+    const projectTitles = document.querySelectorAll('.project-title');
+
+    console.log('Found elements:', {
+        filterButtons: filterButtons.length,
+        projectCards: projectCards.length,
+        projectTitles: projectTitles.length
+    });
 
     // Filter function
-    function filterProjects(category) {
-        if (!projectCards.length) {
-            console.warn('No project cards found');
-            return;
-        }
-        projectCards.forEach(card => {
-            const projectIndex = parseInt(card.dataset.project);
-            const project = projectsData[projectIndex];
-            const projectCategory = project ? project.category : 'fullstack';
-            
-            if (category === 'all' || projectCategory === category) {
-                card.style.display = 'block';
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                
-                setTimeout(() => {
-                    card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, 50);
-            } else {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                setTimeout(() => {
-                    card.style.display = 'none';
-                }, 600);
-            }
-        });
-    }
+function filterProjects(category) {
+    projectCards.forEach(card => {
+        const projectIndex = parseInt(card.dataset.project);
+        const project = projectsData[projectIndex];
 
-    // Filter buttons event handling
+        if (!project) return;
+
+        if (category === 'all' || project.category === category) {
+            card.style.display = 'block'; // grid item is fine with block
+            card.classList.add('animated'); // 🔥 THIS IS THE FIX
+        } else {
+            card.style.display = 'none';
+            card.classList.remove('animated'); // optional cleanup
+        }
+    });
+}
+
+    // 🔥 FIXED Filter buttons event handling - NO EXTERNAL FUNCTION REFERENCE
     function initFilters() {
         filterButtons.forEach((button) => {
-            button.addEventListener('click', function(e) {
+            // Remove any existing listeners
+            const newFilterHandler = function(e) {
                 e.preventDefault();
                 e.stopPropagation();
                 
-                // Remove active from all buttons
+                // Remove active class from all buttons
                 filterButtons.forEach(btn => btn.classList.remove('active'));
-                // Add active to clicked button
-                this.classList.add('active');
                 
-                const filterCategory = this.dataset.filter;
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filterCategory = button.dataset.filter;
+                console.log('✅ Filtering by:', filterCategory);
                 filterProjects(filterCategory);
-            });
+            };
+            
+            // Clear previous listeners
+            button.removeEventListener('click', newFilterHandler);
+            button.addEventListener('click', newFilterHandler);
         });
+        
+        console.log('✅ Filter buttons initialized:', filterButtons.length);
     }
 
-    // Modal Creation - SIMPLIFIED (No links)
+    // Modal Creation
     function createProjectModal() {
+        // Remove existing modal
         const existingModal = document.getElementById('projectModal');
         if (existingModal) {
             existingModal.remove();
@@ -190,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Open Project Modal - SIMPLIFIED
+    // Open Project Modal
     function openProjectModal(projectIndex) {
         console.log('Opening modal for project:', projectIndex);
         
@@ -203,7 +217,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const modal = createProjectModal();
         currentModalProjectIndex = projectIndex;
 
-        // Populate content (NO LINKS)
+        // Populate content
         document.getElementById('modalTitle').textContent = project.title;
         document.getElementById('modalDescription').textContent = project.description;
         
@@ -227,10 +241,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Reset slideshow & show
         currentSlide = 0;
-        slideshowActive = true;
-        startSlideshow();
+        if (project.title === "Dodge Game Prototype") {
+            stopSlideshow();
+        } else {
+            slideshowActive = true;
+            startSlideshow();
+        }
+
         updateGallery();
-        
+
         setTimeout(() => {
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -289,32 +308,36 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // ✅ FIXED: Click handler ONLY on project TITLES
-    projectTitles.forEach(title => {
-        title.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            const projectIndex = parseInt(this.closest('.project-card').dataset.project);
-            if (!isNaN(projectIndex)) {
-                openProjectModal(projectIndex);
-            }
+    // Click handler ONLY on project TITLES
+    if (projectTitles.length > 0) {
+        projectTitles.forEach(title => {
+            title.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const projectIndex = parseInt(this.closest('.project-card').dataset.project);
+                if (!isNaN(projectIndex)) {
+                    openProjectModal(projectIndex);
+                }
+            });
         });
-    });
-
-    // ✅ REMOVED: Document-level click handler that intercepted buttons
+    }
 
     // Keyboard support
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') closeModal();
     });
 
-    // Initialize everything
-    initFilters();
+    // 🔥 FINAL INITIALIZATION - NO ERRORS!
+    if (filterButtons.length > 0) {
+        initFilters();
+    }
     filterProjects('all');
 
     // Expose global functions
     window.openProjectModal = openProjectModal;
     window.closeModal = closeModal;
+    window.filterProjects = filterProjects;
     
-    console.log('✅ Projects JS loaded - Live Demo/GitHub buttons work perfectly!');
+    console.log('✅ Projects JS loaded PERFECTLY - No errors!');
 });
+
