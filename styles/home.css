@@ -343,8 +343,6 @@
     color: var(--text-secondary);
     font-size: 1.1rem;
 }
-
-/*=======================================*/
 /* About Section Stats Cards */
 .skills-grid {
     display: flex;
