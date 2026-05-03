@@ -109,8 +109,19 @@
     text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
+.role {
+    display: inline-block;
+    min-height: 2.2rem; 
+    line-height: 1.2;
+    position: relative;
+    font-size: 1.5rem; 
+    font-weight: 600;
+}
+
 .role-text {
-    color: #1f2937 !important;
+    display: inline-block;
+    min-width: 200px; 
+    white-space: nowrap;
 }
 
 .cursor {
@@ -119,8 +130,19 @@
     height: 2.2rem;
     background: linear-gradient(to bottom, #1f2937, #10b981);
     margin-left: 0.5rem;
+    vertical-align: top;
     animation: blink 1s infinite;
     box-shadow: 0 0 5px rgba(16,185,129,0.5);
+    flex-shrink: 0; /* Prevent cursor from shrinking */
+}
+
+[data-theme="dark"] .cursor {
+    background: linear-gradient(to bottom, #f8fafc, #34d399);
+    box-shadow: 0 0 5px rgba(52,211,153,0.6);
+}
+
+.role {
+    line-height: 1.2 !important;
 }
 
 .hero-description {
