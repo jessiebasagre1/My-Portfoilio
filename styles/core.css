@@ -149,52 +149,13 @@ padding: 0.5rem;
         border-radius: 25px;
     }
     
-    .nav-container { padding: 0 1rem; }
-    .nav-menu { display: none !important; }
-    
-    .mobile-menu {
-        position: fixed;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(20px);
-        border-radius: 0 0 25px 25px;
-        padding: 1rem 0;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        transform: translateY(-20px);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        z-index: 999;
-        gap: 0;
+.nav-container { padding: 0 1rem; }
+.nav-menu { 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 5px;
+    text-align: center;
+    padding: 0; 
     }
     
-    [data-theme="dark"] .mobile-menu {
-        background: rgba(15, 23, 42, 0.98);
-        box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
-    }
-    
-    .mobile-menu.active {
-        display: flex !important;
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-    }
-    
-    .mobile-menu .nav-link {
-        display: block;
-        padding: 1rem 2rem;
-        font-size: 1.1rem;
-        font-weight: 600;
-        border-bottom: 1px solid rgba(0,0,0,0.05);
-        transition: all 0.3s ease;
-    }
-    
-    .mobile-menu .nav-link:hover {
-        background: var(--primary-color);
-        color: white !important;
-        padding-left: 3rem;
-        transform: translateX(10px);
-    }
 }
