@@ -542,7 +542,7 @@
 
 .modal-gallery {
     position: relative;
-    height: 400px;
+    height: 300px;
     overflow: hidden;
     cursor: pointer;
     flex-shrink: 0;

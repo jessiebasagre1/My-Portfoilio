@@ -85,3 +85,27 @@ document.querySelectorAll('.animate-on-scroll, .education-card, .stat-item, .pro
     observer.observe(el);
 });
 });
+
+// Back to Top Button
+window.addEventListener('scroll', () => {
+    const backToTop = document.getElementById('backToTop');
+    if (window.pageYOffset > 300) {
+        backToTop.classList.add('show');
+    } else {
+        backToTop.classList.remove('show');
+    }
+});
+
+document.getElementById('backToTop').addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Active nav link
+document.querySelectorAll('.nav-link').forEach(link => {
+    if (link.getAttribute('href') === '#experience') {
+        link.classList.add('active');
+    }
+});

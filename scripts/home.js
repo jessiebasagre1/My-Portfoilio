@@ -124,3 +124,4 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(skillsSection);
     }
 });
+

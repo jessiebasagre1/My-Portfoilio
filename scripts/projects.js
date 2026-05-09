@@ -9,17 +9,12 @@ document.addEventListener('DOMContentLoaded', function() {
             shortDesc: "A Simple Product management with real-time CRUD.",
             features: [
                 "Real-time product CRUD operations",
-                "Image upload & storage with MongoDB GridFS",
                 "Responsive design for all devices",
-                "Search & filter functionality",
                 "Data validation & error handling",
                 "Axios-powered API communication"
             ],
             challenges: [
-                "File upload handling with MongoDB GridFS",
                 "Real-time data synchronization",
-                "Responsive image optimization",
-                "Form validation across multiple fields"
             ],
             learnings: [
                 "MongoDB aggregation pipelines for search",
@@ -29,12 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ],
             tech: ["HTML5", "CSS3", "JavaScript", "Node.js", "MongoDB", "Axios"],
             category: 'backend',
-            stats: {
-                products: 150,
-                operations: 5000,
-                uptime: "99.9%"
-            },
-            progress: 95,
+            progress: 100,
             images: [
                 "../pages/images/simpleCrudApp1.png",
                 "../pages/images/simpleCrudApp2.png", 
@@ -71,12 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ],
             tech: ["HTML5", "CSS3", "JavaScript", "Node.js", "MongoDB"],
             category: 'fullstack',
-            stats: {
-                products: 250,
-                orders: 1200,
-                shops: 15
-            },
-            progress: 85,
+            progress: 65,
             images: [
                 "../pages/images/cala-cesta1.png",
                 "../pages/images/cala-cesta2.png",
@@ -85,11 +70,10 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         {
             title: "Data Dashboard",
-            description: "Modern admin dashboard for e-commerce analytics with interactive charts, real-time data updates, and responsive design optimized for business decision-making.",
+            description: "Modern admin dashboard for e-commerce analytics with interactive charts, and responsive design optimized for business decision-making.",
             shortDesc: "Admin Dashboard for product & inventory management.",
             features: [
                 "Interactive data visualizations",
-                "Real-time metrics updates",
                 "Responsive table with sorting/filtering",
                 "Sales analytics & trends",
                 "Order management interface",
@@ -109,11 +93,6 @@ document.addEventListener('DOMContentLoaded', function() {
             ],
             tech: ["HTML5", "CSS3", "JavaScript"],
             category: 'frontend',
-            stats: {
-                metrics: 25,
-                charts: 8,
-                tables: 3
-            },
             progress: 100,
             images: [
                 "../pages/images/dashboard1.png",
@@ -141,22 +120,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 "Precise input timing mechanics",
                 "Progressive difficulty balancing",
                 "Educational content integration",
-                "Cross-platform input handling"
             ],
             learnings: [
                 "Game loop optimization in Unity",
                 "Input handling across devices",
-                "Difficulty curve design",
-                "Educational gamification techniques"
             ],
             tech: ["C#", "Unity Game Engine", "Gemini AI"],
             category: 'game',
-            stats: {
-                words: 500,
-                levels: 10,
-                wpm: "85+"
-            },
-            progress: 75,
+            progress: 35,
             images: [
                 "../pages/images/typephoon-1.png",
                 "../pages/images/typephoon-2.png",
@@ -169,7 +140,6 @@ document.addEventListener('DOMContentLoaded', function() {
             shortDesc: "Simple calculator with minimalist design.",
             features: [
                 "Smooth button animations",
-                "Keyboard number support",
                 "Responsive across all devices",
                 "Error handling & validation",
                 "Modern glassmorphism design",
@@ -183,16 +153,10 @@ document.addEventListener('DOMContentLoaded', function() {
             ],
             learnings: [
                 "Advanced CSS animations",
-                "Keyboard event handling",
-                "Touch gesture optimization",
                 "Glassmorphism design patterns"
             ],
             tech: ["HTML5", "CSS3", "JavaScript"],
             category: 'frontend',
-            stats: {
-                operations: "All basic",
-                precision: "16 digits"
-            },
             progress: 100,
             images: [
                 "../pages/images/calc1.png",
@@ -230,16 +194,43 @@ document.addEventListener('DOMContentLoaded', function() {
             ],
             tech: ["C#", "Unity Game Engine"],
             category: 'game',
-            stats: {
-                obstacles: 1000,
-                highscore: "2500+",
-                speed: "15 units/sec"
-            },
-            progress: 90,
+            progress: 70,
             images: [
                 "../pages/images/dodgegame.gif",
                 "../pages/images/dodge-1.png",
                 "../pages/images/dodge-thumbnail.png"
+            ]
+        },
+        {
+            title: "The Last Astronaut",
+            description: "The Last Astronaut is a 2D sci-fi survival action game where players take on the role of a stranded astronaut who crash-lands on a hostile alien planet after a failed space mission. With no way to contact Earth, players must explore dangerous environments, collect resources, and battle aggressive alien creatures to stay alive. The game combines 2D exploration, fast-paced combat, and survival mechanics, creating an immersive experience filled with challenging enemies, mysterious locations, and intense encounters. Players must adapt to the harsh conditions of the planet while uncovering secrets hidden within the alien world. This project highlights skills in 2D game development, gameplay programming, enemy AI, level design, animation systems, and interactive storytelling.",
+            shortDesc: "A 2D sci-fi survival action game where a stranded astronaut must explore a hostile alien planet, survive deadly encounters, and defeat alien creatures to find a way back home.",
+            features: [
+                "Survival Mechanics",
+                "Enemy AI",
+                "Character Animation System",
+                "2D Exploration System",
+                "Double Jump and Crawl Movement",
+            ],
+            challenges: [
+                "design engaging combat mechanics",
+                "create responsive enemy AI",
+                "build immersive environments",
+                "Smooth Movement Animations"
+            ],
+            learnings: [
+                "Animations",
+                "Problem-solving",
+                "AI or NPC behavior",
+                "Blend Tree Animations for movement axis"
+            ],
+            tech: ["C#", "Unity Game Engine"],
+            category: 'game',
+            progress: 30,
+            images: [
+                "../pages/images/space.gif",
+                "../pages/images/space-1.png",
+                "../pages/images/space-1.png"
             ]
         }
     ];
@@ -356,15 +347,6 @@ document.addEventListener('DOMContentLoaded', function() {
             `<span class="tech-tag">${tech}</span>`
         ).join('');
 
-        // Stats
-        const statsHtml = `
-            <div class="stat-box">
-                <div class="stat-number">${project.stats ? Object.values(project.stats)[0] || 'N/A' : 'N/A'}</div>
-                <div class="stat-label">${Object.keys(project.stats || {})[0] || 'Metric'}</div>
-            </div>
-        `;
-        document.getElementById('modalStats').innerHTML = statsHtml;
-
         // Progress bar
         const progress = project.progress || 0;
         document.getElementById('progressText').textContent = `${progress}%`;
@@ -453,7 +435,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
-            if (project.title !== "Dodge Game Prototype") startSlideshow();
+            if (project.title !== "Dodge Game Prototype" &&project.title !== "The Last Astronaut") startSlideshow();
         }, 10);
     }
 
