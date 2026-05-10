@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 "../pages/images/simpleCrudApp3.png"
             ],
             links: {
-                live: "https://your-live-url.com",
+                live: "https://jessiebasagre1.github.io/simple-crud-app/",
                 github: "https://github.com/jessiebasagre1/simple-crud-app"
             }
         },

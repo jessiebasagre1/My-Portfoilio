@@ -1,3 +1,45 @@
+//============NAVIGATION=====================
+// Dropdown Menu Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const parentDropdown = this.closest('.nav-dropdown');
+            const isActive = parentDropdown.classList.contains('active');
+            
+            // Close all other dropdowns
+            document.querySelectorAll('.nav-dropdown').forEach(dd => {
+                dd.classList.remove('active');
+            });
+            
+            // Toggle current dropdown
+            if (!isActive) {
+                parentDropdown.classList.add('active');
+            }
+        });
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.nav-dropdown')) {
+            document.querySelectorAll('.nav-dropdown').forEach(dd => {
+                dd.classList.remove('active');
+            });
+        }
+    });
+
+    // Close dropdown on window resize (mobile)
+    window.addEventListener('resize', function() {
+        document.querySelectorAll('.nav-dropdown').forEach(dd => {
+            dd.classList.remove('active');
+        });
+    });
+});
+//=====================
 document.addEventListener('DOMContentLoaded', function() {
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

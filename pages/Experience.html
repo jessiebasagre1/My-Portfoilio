@@ -16,23 +16,31 @@
 <nav class="navbar" id="navbar">
     <div class="nav-container">
         <div class="logo"><img src="images/logo.png" alt="logo" width="50px" height="50px"></div>
-        <ul class="nav-menu">
-            <li><a href="../index.html#home" class="nav-link">Home</a></li>
-            <li><a href="../index.html#about" class="nav-link">About</a></li>
-            <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
-            <li><a href="#experience" class="nav-link active">Experience</a></li>
-            <li><a href="Education.html" class="nav-link">Education</a></li>
-            <li><a href="Projects.html" class="nav-link">Projects</a></li>
-            <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
-        </ul>
-        <div class="top-buttons">
-            <button class="theme-toggle" id="themeToggle">
-                <i class="fas fa-moon"></i>
-            </button>
+        <div class="nav-and-toggle">
+            <ul class="nav-menu">
+                <li class="nav-dropdown">
+                    <a href="../index.html#home" class="nav-link dropdown-toggle">
+                        Home <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../index.html#home" class="nav-link dropdown-item">Home</a></li>
+                        <li><a href="../index.html#about" class="nav-link dropdown-item">About</a></li>
+                        <li><a href="../index.html#skills" class="nav-link dropdown-item">Skills</a></li>
+                        <li><a href="../index.html#contact" class="nav-link dropdown-item">Contact</a></li>
+                    </ul>
+                </li>
+                <li><a href="Experience.html" class="nav-link active">Experience</a></li>
+                <li><a href="Education.html" class="nav-link">Education</a></li>
+                <li><a href="Projects.html" class="nav-link">Projects</a></li>
+            </ul>
+            <div class="top-buttons">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
         </div>
     </div>
 </nav>
-
 <!-- Hero Section -->
 <section class="page-hero">
     <div class="hero-overlay"></div>
@@ -57,7 +65,7 @@
                 <div class="timeline-content">
                     <div class="experience-card">
                         <div class="experience-image">
-                            <img src="images/da-office.jpg" alt="Department of Agriculture Office" loading="lazy">
+                            <img src="./images/da.jpg" alt="Department of Agriculture Office" loading="lazy">
                             <div class="image-overlay">
                                 <i class="fas fa-building"></i>
                             </div>
@@ -96,7 +104,7 @@
                 <div class="timeline-content">
                     <div class="experience-card">
                         <div class="experience-image">
-                            <img src="images/construction-business.jpg" alt="Family Construction Business" loading="lazy">
+                            <img src="./images/business.webp" alt="Family Construction Business" loading="lazy">
                             <div class="image-overlay">
                                 <i class="fas fa-truck"></i>
                             </div>
@@ -138,7 +146,7 @@
                 <div class="timeline-content">
                     <div class="experience-card">
                         <div class="experience-image">
-                            <img src="" alt="Personal Portfolio" loading="lazy">
+                            <img src="./images/portfolio.png" alt="Personal Portfolio" loading="lazy">
                             <div class="image-overlay">
                                 <i class="fas fa-laptop-code"></i>
                             </div>
