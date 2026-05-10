@@ -297,21 +297,23 @@ padding: 0.5rem;
 /* Responsive */
 @media (max-width: 768px) {
     .navbar {
-        width: 95%;
+        width: 100%;
         padding: 0.8rem 0;
         margin-top: 8px;
         border-radius: 25px;
+        gap: 0;
     }
 
     
 .nav-container { padding: 0 1rem; }
 .nav-menu { 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 5px;
-    text-align: center;
-    align-items: center;
+    display: block;
     padding: 0; 
+    margin-right: 0;
+
+    }
+    .nav-link{
+        width: 20px;
     }
     
 }
