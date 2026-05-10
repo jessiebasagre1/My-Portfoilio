@@ -62,6 +62,11 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => document.querySelector('.hero-content p')?.classList.add('animate-hero'), 600);
         setTimeout(() => document.querySelector('.cta-buttons')?.classList.add('animate-hero'), 900);
     }, 500);
+
+    const skillsSection = document.querySelector('.skills-container');
+    if (skillsSection) {
+        skillObserver.observe(skillsSection);
+    }
 });
 
 //=====================SENDING MESSAGE TO EMAIL=================================
@@ -93,35 +98,24 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
         });
 });
 //===========================This is for progress skill bar==========================
-// Animate skill progress bars
+ // Skills Progress Bars Animation
 function animateSkillBars() {
-    const progressBars = document.querySelectorAll('.skill-progress');
-    
-    progressBars.forEach(bar => {
-        const width = bar.getAttribute('data-width');
-        if (bar.getAttribute('data-animated') !== 'true') {
-            setTimeout(() => {
-                bar.style.width = width;
-                bar.setAttribute('data-animated', 'true');
-            }, 300);
-        }
+    const progressBars = document.querySelectorAll('.progress-fill');
+    progressBars.forEach((bar, index) => {
+        setTimeout(() => {
+            const width = bar.getAttribute('data-width');
+            bar.style.width = width + '%';
+            bar.setAttribute('data-width-display', width); // Update display value
+        }, index * 150);
     });
 }
 
-// Trigger on scroll
-const observer = new IntersectionObserver((entries) => {
+// Intersection Observer for Skills Section
+const skillObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             animateSkillBars();
-            observer.unobserve(entry.target);
+            skillObserver.unobserve(entry.target);
         }
     });
 }, { threshold: 0.1 });
-
-document.addEventListener('DOMContentLoaded', () => {
-    const skillsSection = document.querySelector('#skills');
-    if (skillsSection) {
-        observer.observe(skillsSection);
-    }
-});
-

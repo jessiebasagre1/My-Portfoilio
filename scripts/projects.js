@@ -82,7 +82,6 @@ document.addEventListener('DOMContentLoaded', function() {
             challenges: [
                 "Complex responsive grid layouts",
                 "Interactive chart animations",
-                "Real-time data table updates",
                 "Mobile-first dashboard optimization"
             ],
             learnings: [
@@ -232,7 +231,76 @@ document.addEventListener('DOMContentLoaded', function() {
                 "../pages/images/space-1.png",
                 "../pages/images/space-1.png"
             ]
-        }
+        },
+        {
+            title: "Clicky Crates",
+            description: "Clicky Crates is a beginner-friendly game project from the Unity Technologies “Create with Code” / Junior Programmer learning path. The goal is to click or swipe crates and objects before they fall off the screen while avoiding bad objects like skulls.",
+            shortDesc: "Arcade game with interactive gameplay and score-based mechanics.",
+            features: [
+                "Randomly spawning crates/targets",
+                "Difficulty selection",
+                "Score system",
+                "Destroy objects with mouse clicks/swipes",
+                "“Good” and “bad” objects",
+                "UI system for score and game over screens"
+            ],
+            challenges: [
+                "Handling mouse click or touch input accurately",
+                "Debugging collisions and object behaviors in Unity",
+                "Implementing object spawning and random movement mechanics",
+                "Performance optimization"
+            ],
+            learnings: [
+                "Object spawning",
+                "Coroutines",
+                "UI/TextMeshPro",
+                "Mouse input handling",
+                "Random force and torque physics"
+            ],
+            tech: ["C#", "Unity Game Engine"],
+            category: 'game',
+            progress: 100,
+            images: [
+                "../pages/images/clicky-crates.gif",
+                "../pages/images/clicky-crates1.png",
+                "../pages/images/clicky-crates2.png"
+            ]
+        },
+        {
+            title: "Soccer Sumo",
+            description: "A physics-based 3D soccer game developed in Unity Technologies Unity where the player directly controls a rolling ball to score goals while avoiding obstacles and managing movement through realistic physics mechanics. The project demonstrates skills in player controls, collision detection, rigidbody physics, camera tracking, and game logic implementation, providing an interactive and engaging gameplay experience.",
+            shortDesc: "A physics-based rolling ball soccer game developed in Unity.",
+            features: [
+                "Physics-based rolling ball movement",
+                "Goal scoring system",
+                "Smooth player controls",
+                "Collision and obstacle interaction",
+                "Camera follow system",
+                "Simple soccer-style gameplay mechanics"
+            ],
+            challenges: [
+                "Balancing the ball movement and speed",
+                "Handling realistic physics interactions",
+                "Creating responsive player controls",
+                "Managing collision detection accurately",
+                "Adjusting camera movement for smoother gameplay"
+            ],
+            learnings: [
+                "Implementing Rigidbody physics in Unity Technologies Unity",
+                "Using collision detection and triggers",
+                "Improving player movement scripting with C#",
+                "Designing simple game mechanics and objectives",
+                "Understanding camera tracking and game flow systems"
+            ],
+            tech: ["C#", "Unity Game Engine"],
+            category: 'game',
+            progress: 100,
+            images: [
+                "../pages/images/ball-game.gif",
+                "../pages/images/ball-game1.png",
+                "../pages/images/ball-game2.png"
+            ]
+        },
     ];
 
     // Global State
@@ -435,7 +503,8 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
-            if (project.title !== "Dodge Game Prototype" &&project.title !== "The Last Astronaut") startSlideshow();
+            if (project.category !== "game") 
+            startSlideshow();
         }, 10);
     }
 
